@@ -14,18 +14,22 @@ function QuickAction() {
   },
   { titulo: 'Add Novo Item' }];
   return (
-    <main>
+    <section className="">
       <Title headline="Ações Rápidas" />
-      <ul>
+      <ul className="flex justify-between mb-20">
         { mockUp.map((botao, index) => (
-          <li key={ index }>
+          <li
+            key={ index }
+            className="bg-grey-900 w-72 h-36 flex
+            flex-col items-center justify-center rounded-2xl"
+          >
             <Button titulo={ botao.titulo } descricao={ botao.descricao } />
           </li>
         )) }
 
       </ul>
 
-    </main>
+    </section>
   );
 }
 
