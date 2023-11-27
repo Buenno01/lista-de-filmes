@@ -1,18 +1,31 @@
 import Title from './Title';
 
 type MovieCardProps = {
-  titulo: string;
-  ano: number;
-  nota: number;
-  genero: string[];
-  favorito: boolean;
-  assistido: boolean;
-  icon: string;
+  title: string;
+  year: number;
+  rate: number;
+  genres: string[];
+  favorite: boolean;
+  watched: boolean;
+  image: string;
 };
 
-function MovieCard({ titulo, ano, nota, genero, favorito, assistido, icon }: MovieCardProps) {
-  retun(
-    <Title headline="Todas as Obras" />,
+function MovieCard({ title, year, rate, genres,
+  favorite, watched, image }: MovieCardProps) {
+  return (
+    <div>
+      <span>
+        <span>{favorite}</span>
+        <img src={ image } alt={ title } />
+      </span>
+      <div>
+        <h3>{title}</h3>
+        <p>{rate}</p>
+        <p>{genres.join(' - ')}</p>
+        <h2>{year}</h2>
+        <button>{watched ? 'Assistido' : 'Não assistido'}</button>
+      </div>
+    </div>
   );
 }
 
